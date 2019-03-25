@@ -12,3 +12,26 @@
     color: #999;
   }
   
+  .Home .pedidos h4 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    overflow: hidden;
+    line-height: 1.5;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .Home .pedidos p {
+    color: #666;
+  }
+  
+.Home .minion-content{
+    padding: 20px;
+    margin: auto;
+    width: 80%;
+}
+
+.Home .minion-content img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
