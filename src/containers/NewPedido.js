@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import LoaderButton from "../components/LoaderButton";
-import config from "../config";
 import { API } from "aws-amplify";
 import "./NewPedido.css";
 
@@ -31,6 +30,11 @@ export default class NewPedido extends Component {
     this.setState({ isLoading: true });
   
     try {
+      await this.sendEmail({
+        email: "DummyEmail",
+        name: "DummyName",
+        content: this.state.content
+      });
       await this.createPedido({
         content: this.state.content
       });
@@ -47,6 +51,11 @@ export default class NewPedido extends Component {
     });
   }
   
+  sendEmail(email){
+    return API.post("pedidos", "/email/send", {
+      body: JSON.stringify(email)
+    });
+  }
 
   render() {
     return (
